@@ -1,0 +1,410 @@
+Crie um sistema web profissional completo de gestão para academia, que será utilizado em um projeto real para uma academia chamada PLENITUDE.
+
+A academia se chama PLENITUDE ACADEMIA, e a imagem fornecida é a logo oficial da academia. O sistema deve utilizar as cores da logo (tons de verde/azulado e cinza/prata) em toda a identidade visual do site, criando um design moderno, elegante e profissional.
+
+O sistema deve ser totalmente funcional, com arquitetura organizada e código limpo, preparado para produção.
+
+IMPORTANTE:
+
+O projeto deve estar pronto para ser hospedado no Vercel
+
+O sistema deve utilizar Supabase como backend
+
+O projeto deve ter estrutura profissional
+
+O código deve ser bem organizado e documentado
+
+O sistema deve ser responsivo (funcionar em celular, tablet e computador)
+
+Não escolha linguagens baseadas em restrições; escolha as tecnologias mais adequadas automaticamente.
+
+IDENTIDADE VISUAL
+
+Utilize a logo enviada da PLENITUDE ACADEMIA.
+
+Características do design:
+
+Tema escuro moderno
+
+Cores principais baseadas na logo:
+
+verde/azulado
+
+cinza/prata
+
+fundo escuro
+
+Interface minimalista e moderna
+
+Estilo semelhante a dashboards profissionais
+
+OBJETIVO DO SISTEMA
+
+O sistema é um Sistema de Gestão de Academia que tem como objetivo:
+
+gerenciar alunos
+
+controlar mensalidades
+
+registrar presença
+
+organizar histórico de treinos
+
+criar motivação através de gamificação
+
+facilitar comunicação com alunos
+
+organizar toda a gestão da academia
+
+Esse sistema substituirá controle manual de alunos e pagamentos.
+
+TIPOS DE USUÁRIOS
+
+O sistema deve ter dois tipos de usuário.
+
+ADMINISTRADOR (ACADEMIA)
+
+Usuário usado pela dona da academia ou funcionários.
+
+Permissões:
+
+cadastrar alunos
+
+editar alunos
+
+excluir alunos
+
+visualizar lista completa de alunos
+
+controlar mensalidades
+
+registrar treinos
+
+visualizar ranking
+
+visualizar alunos com mensalidade vencida
+
+enviar mensagem de cobrança
+
+desativar alunos
+
+ALUNO
+
+Usuário com acesso limitado.
+
+Permissões:
+
+visualizar seu perfil
+
+visualizar data de vencimento
+
+visualizar histórico de treinos
+
+visualizar pontuação
+
+visualizar ranking
+
+AUTENTICAÇÃO
+
+Criar sistema completo de login com:
+
+login
+
+logout
+
+recuperação de senha
+
+criação automática de conta para aluno
+
+Utilizar autenticação integrada do Supabase.
+
+CADASTRO DE ALUNOS
+
+Os alunos não podem criar conta sozinhos.
+
+Somente administradores podem cadastrar alunos.
+
+Campos do cadastro:
+
+nome completo
+
+telefone (WhatsApp)
+
+foto do aluno
+
+data de matrícula
+
+plano da academia
+
+data de vencimento da mensalidade
+
+A foto pode ser:
+
+enviada da galeria
+
+capturada da câmera
+
+CRIAÇÃO AUTOMÁTICA DE CONTA
+
+Quando um aluno é cadastrado:
+
+O sistema cria automaticamente:
+
+Usuário = telefone do aluno
+Senha temporária = gerada automaticamente
+
+No primeiro login o aluno deve poder trocar a senha.
+
+LISTA DE ALUNOS
+
+Criar página chamada:
+
+Lista de Alunos
+
+Cada aluno deve mostrar:
+
+foto
+
+nome
+
+telefone
+
+status da mensalidade
+
+Status possíveis:
+
+Ativo
+
+Prestes a vencer
+
+Vencido
+
+Adicionar:
+
+campo de busca
+
+filtros
+
+PERFIL DO ALUNO
+
+Cada aluno terá uma página de perfil com:
+
+foto
+
+nome
+
+telefone
+
+data de matrícula
+
+vencimento da mensalidade
+
+pontuação
+
+Botões de ação:
+
+editar aluno
+
+renovar mensalidade
+
+registrar treino
+
+enviar mensagem WhatsApp
+
+desativar aluno
+
+CONTROLE DE MENSALIDADE
+
+Quando o aluno pagar:
+
+Botão:
+
+Renovar Mensalidade
+
+O sistema adiciona automaticamente 30 dias à data atual.
+
+STATUS AUTOMÁTICO
+
+Sistema deve classificar automaticamente:
+
+Alunos ativos
+Alunos prestes a vencer
+Alunos vencidos
+
+Criar uma dashboard que mostre essas informações.
+
+ENVIO DE COBRANÇA WHATSAPP
+
+Adicionar botão:
+
+Enviar mensagem no WhatsApp
+
+Abrir automaticamente WhatsApp com mensagem:
+
+"Olá [Nome], sua mensalidade da academia PLENITUDE venceu. Entre em contato para renovar."
+
+SISTEMA DE PRESENÇA
+
+Adicionar botão:
+
+Registrar Treino
+
+Ao clicar, o sistema salva:
+
+nome
+
+data
+
+horário
+
+HISTÓRICO DE TREINOS
+
+Cada aluno terá uma lista com:
+
+Data do treino
+
+Exemplo:
+
+10/03 - Treino registrado
+12/03 - Treino registrado
+14/03 - Treino registrado
+
+SISTEMA DE GAMIFICAÇÃO
+
+Cada treino gera pontos.
+
+Exemplo:
+
+1 treino = 10 pontos
+
+Os pontos são acumulados automaticamente.
+
+RANKING DE ALUNOS
+
+Criar página:
+
+Ranking
+
+Mostrar alunos com mais pontos.
+
+Exemplo:
+
+1º João — 120 pontos
+2º Maria — 100 pontos
+3º Pedro — 90 pontos
+
+DESAFIOS SEMANAIS
+
+Sistema deve permitir criar desafios.
+
+Exemplo:
+
+Treinar 6 vezes na semana.
+
+RECOMPENSAS
+
+Sistema deve permitir recompensas.
+
+Exemplos:
+
+creatina
+
+camisa da academia
+
+semana gratuita
+
+DESATIVAR ALUNO
+
+Permitir desativar alunos.
+
+Eles não aparecem na lista principal, mas os dados continuam salvos.
+
+BANCO DE DADOS
+
+Utilizar Supabase.
+
+Criar automaticamente as tabelas necessárias:
+
+usuarios
+
+alunos
+
+treinos
+
+mensalidades
+
+pontos
+
+desafios
+
+SEGURANÇA
+
+senhas criptografadas
+
+autenticação segura
+
+controle de acesso por tipo de usuário
+
+DEPLOY
+
+O projeto deve vir configurado para deploy no Vercel.
+
+Estrutura pronta para rodar com:
+
+npm install
+npm run dev
+ARQUIVO DE CONFIGURAÇÃO
+
+Criar arquivo:
+
+.env.example
+
+Com variáveis necessárias para Supabase.
+
+DOCUMENTAÇÃO
+
+Criar um arquivo chamado:
+
+COMO_USAR.txt
+
+Esse arquivo deve explicar detalhadamente:
+
+como instalar o projeto
+
+como configurar Supabase
+
+como rodar localmente
+
+como fazer deploy no Vercel
+
+como usar o sistema
+
+como cadastrar alunos
+
+como registrar treinos
+
+como renovar mensalidade
+
+como usar ranking
+
+como usar gamificação
+
+Explicar tudo detalhadamente.
+
+RESULTADO FINAL
+
+O sistema final deve ser:
+
+profissional
+
+funcional
+
+bonito
+
+responsivo
+
+organizado
+
+pronto para produção
+
+Esse é um projeto real para a academia PLENITUDE, portanto o sistema deve ser construído com qualidade profissional.
