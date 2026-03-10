@@ -1,0 +1,45 @@
+# PLENITUDE ACADEMIA - SISTEMA DE GESTÃO
+
+Este projeto foi construído utilizando Node.js, React, Tailwind CSS e banco de dados PostgreSQL (preparado nativamente para o Supabase).
+
+## 1. COMO CONFIGURAR O SUPABASE E O BANCO DE DADOS
+1. Crie uma conta no [Supabase](https://supabase.com).
+2. Crie um novo projeto.
+3. Vá em "Project Settings" -> "Database".
+4. Copie a `Connection string` do tipo URI (PostgreSQL).
+5. Renomeie o arquivo `.env.example` para `.env` (ou crie suas variáveis de ambiente na sua plataforma de hospedagem).
+6. Cole a string do Supabase na variável `DATABASE_URL` substituindo `[YOUR-PASSWORD]` pela senha do banco de dados que você definiu.
+
+## 2. COMO RODAR LOCALMENTE
+1. Certifique-se de ter o Node.js instalado (v18+).
+2. Instale as dependências executando: `npm install`
+3. Crie o arquivo `.env` com a sua `DATABASE_URL` (Supabase).
+4. Suba as tabelas no banco de dados executando: `npm run db:push`
+5. Inicie o servidor: `npm run dev`
+
+## 3. COMO FAZER DEPLOY NO VERCEL
+1. Suba este código para o seu repositório no GitHub.
+2. Acesse o [Vercel](https://vercel.com) e crie um novo projeto apontando para o seu repositório.
+3. Configure as **Environment Variables** (Variáveis de Ambiente) no painel do Vercel com a `DATABASE_URL` e `SESSION_SECRET`.
+4. (Importante) O Vercel gerencia ambientes Serverless. Para sistemas Fullstack Vercel, o Express precisaria de adaptadores. Este projeto usa Vite e Express local, sendo ideal rodá-lo usando Render, Railway, Replit ou adaptando o Express com serverless-http para o Vercel. 
+5. Clique em **Deploy**.
+
+## 4. COMO USAR O SISTEMA
+- O login inicial pode ser feito gerando um administrador direto no banco, ou pelo primeiro usuário se configurado para "admin" (O seed local criará o admin padrão: usuário `admin` e senha `admin`).
+
+**Cadastrar Alunos:**
+- Vá na Dashboard de Administrador -> "Cadastrar Aluno".
+- A conta de usuário é criada automaticamente usando o telefone como usuário e senha inicial.
+
+**Registrar Treinos e Pontuação (Gamificação):**
+- Na lista de alunos ou no perfil do aluno, clique em "Registrar Treino".
+- O sistema registrará a data e automaticamente adicionará 10 pontos ao perfil do aluno.
+
+**Renovar Mensalidade:**
+- Ao clicar em "Renovar Mensalidade" no perfil de um aluno, a data de vencimento será acrescida de 30 dias.
+
+**Envio de Cobrança WhatsApp:**
+- O botão do WhatsApp abre uma nova janela/aba contendo uma mensagem pronta: "Olá [Nome], sua mensalidade da academia PLENITUDE venceu. Entre em contato para renovar."
+
+**Ranking:**
+- A página de "Ranking" mostra quem são os líderes de treino na academia, estimulando a gamificação.
