@@ -1,0 +1,25 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K10:36:06 PM [express] serving on port 5000
+10:36:14 PM [express] GET /api/auth/me 401 in 5ms :: {"message":"Not authenticated"}
+10:45:39 PM [express] POST /api/auth/login 200 in 14ms :: {"user":{"id":1,"username":"admin","password":"admin","role":"admin"},"student":null}
+10:45:40 PM [express] GET /api/students 200 in 4ms :: []
+10:45:41 PM [express] GET /api/workouts 200 in 3ms :: []
+10:46:10 PM [express] GET /api/auth/me 200 in 2ms :: {"user":{"id":1,"username":"admin","password":"admin","role":"admin"},"student":null}
+10:46:10 PM [express] GET /api/students 304 in 3ms :: []
+10:46:10 PM [express] GET /api/workouts 304 in 2ms :: []
+10:46:54 PM [express] GET /api/auth/me 304 in 2ms :: {"user":{"id":1,"username":"admin","password":"admin","role":"admin"},"student":null}
+10:46:54 PM [express] GET /api/students 304 in 2ms :: []
+10:46:54 PM [express] GET /api/workouts 304 in 2ms :: []
+10:47:06 PM [express] GET /api/challenges 200 in 11ms :: []
+10:47:10 PM [express] POST /api/auth/logout 200 in 3ms :: {"message":"Logged out"}
+10:47:11 PM [express] GET /api/auth/me 401 in 2ms :: {"message":"Not authenticated"}
+10:47:18 PM [express] POST /api/auth/login 200 in 2ms :: {"user":{"id":1,"username":"admin","password":"admin","role":"admin"},"student":null}
+10:47:18 PM [express] GET /api/students 304 in 3ms :: []
+10:47:18 PM [express] GET /api/workouts 304 in 2ms :: []
+10:47:29 PM [express] GET /api/auth/me 200 in 2ms :: {"user":{"id":1,"username":"admin","password":"admin","role":"admin"},"student":null}
+10:47:29 PM [express] GET /api/students 200 in 2ms :: []
+10:47:39 PM [express] GET /api/challenges 200 in 12ms :: []
+10:47:50 PM [express] GET /api/workouts 200 in 11ms :: []
